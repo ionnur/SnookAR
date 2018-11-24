@@ -11,7 +11,7 @@ public class GUIText : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        targetFoundUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,6 +21,13 @@ public class GUIText : MonoBehaviour
         //RoundNumUI.text = "Round: " + Spawner.waveNumber;
         ScoreUI.text = "Score: SCOORE";
 
-        if ()
+        if (DefaultTrackableEventHandler.isTracking == true)
+        {
+            targetFoundUI.SetActive(false);
+        }
+        if (DefaultTrackableEventHandler.isTracking == false)
+        {
+            targetFoundUI.SetActive(true);
+        }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
-    ufoLicenseKey: QWJhUjNKdi8vLy8vQUFBQUtFZU0xK3M3SDA1bHR2MDBJcGZmcDF4cmo3MG9IMG5iUTNheWpHZisyYkxsRHcvRnp2VG1tUVM1MytuOVlZS1RUc2dXeHhhYUVDOWJ6MmYwOHVnOHkzUlMrYVQ5OFAyakN2dUZ4dlJFZEpKSXd6MlY3N0M0Y0JWbTUzVVppMFdOQVBXLy92OXVMbjBMb3d4ODBxcXNxMGlqL2JGb3FmQ2Q1Vnd6VCtQTm9SbmVmSzQxSDRBZE9jRVkyckZCMXVPbTJ2UzVkSWtmK3doMFZZdFBpMWRGNU1TSytxNHIyMFFXWExONkNXTHpyNHlZeXA2dDNBL2hORjZEaUlmbGVHQm90MFlwajYvT2dkREJnVUljUW9aQ0FVMCtoZUp0TTh0SGhHRmNhcU52bnRyenF5dFNlbjVWK2tkUVQxSVF0czdYU0MycW5LTFV6NnhMSzNLNFJQK01oUEVvRVJaM2I0V2ZVMWdyV0k4VU8rQTU=
+    vuforiaLicenseKey: AYdTb/H/////AAABme5NfxEBpUhMnDXsLXgUkksN/UH2UuKG0DRylYMR0fECDu6kSb9Q17Ib8eJIOGYHlUlFQKCIlmwxqI1/3Xa+LxdB9VquyQuCTVqXLIypxpvjU0y/alfsF7dcXtmhLBhjSYWRy7JW8sv9lNTRJOYpDs0rVlNwEyLGJ9V4I44pu2mYPxQx58GX48yFKBXn6Wi1IRvfTxtnjAHFis/oH6GXzzpuItn7NKW5ha/ZQfLKNBeXEdSjdJms3YaO8i0k5g01iNrktTLjZRYG5ecfW/XpUf3zo/asrjb9ZMjI3KqMGk/Q/je1Mh9tO892lZUkqL3VuyU66b3Q/0KDoDKfVqRBqsdf7Kk43tvNBJnHfIfbGukd
+    ufoLicenseKey: QWFpVG1Odi8vLy8vQUFBQUtFRFA0MDZTbDA3L3U3WTJvM2tGWTRndC9lUTN3TmJlRERTV2UyVXBlckRjdjB3TlFqRjdkTTYzcXEvQVhHdXpJc3NOeFV2dUs0NDYzamhPMVAzMlUvdXRkdWRmSmxnMDBxc3FwQ254YkErNDBaM2NnS0ZpdGh2VGk4bllQRjlsbjI4djB1TlBXWlNKaEwzNlpsQmd3U3NoVmkyZHF6WE1wajBiR3gvYkd0cXFlanY0ZzlYN3dhbmhaUmNXQm5qdTVhelE4Y2Q5b1VpSVRDbVZXSkZMdDNlTGRVcldzRE0xOXJNaTZvZDAyTFhxRitwMm9KRUR3V2dreHdDa2NVMXgvczlqSk5OdHNHVzFrOXJkbUx4VGEvTG9vZTNYMCs4dTVnZGpTVkNra2FpeG93c0VUck5GSDVJRUxrT0p4cUd4MlJGb1hHOFoyMWlqL216Q3dodi9GdFVnOUlrUzZkbEVqRTN6dzRsOTZ5Snc=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -21,6 +21,7 @@ MonoBehaviour:
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
+    version: 7.2.23
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -52,11 +53,12 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
-    trackingMode: 0
+    trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
+    fusionMode: 7
   smartTerrain:
     autoInitTracker: 0
     autoStartTracker: 0
