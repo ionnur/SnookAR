@@ -51,7 +51,7 @@ public class BallPathfinding : MonoBehaviour {
 	void FixedUpdate() {
 		//Check for changes in pathfinding node.
 		if(useDefaultPath) {
-			if((master.mainPath[pathfindingIndex] - transform.position).sqrMagnitude < 1) {
+			if((master.mainPath[pathfindingIndex] - transform.position).sqrMagnitude < 3) {
 				useDefaultPath = true;
 				//Move to the next pathfinding index.
 				if(pathfindingIndex < master.mainPath.Count - 1) pathfindingIndex++;
