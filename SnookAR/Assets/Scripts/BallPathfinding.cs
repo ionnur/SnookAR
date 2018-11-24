@@ -27,7 +27,10 @@ public class BallPathfinding : MonoBehaviour {
 	//How much force is applied to the ball
 	//each frame to "steer" it.
 	[SerializeField]
+
 	private float force = 1;
+    private float weight = 1;
+    private bool currentlyHit = false;
 
 	void Start() {
 		master = FindObjectOfType<PathfindingMaster>();
