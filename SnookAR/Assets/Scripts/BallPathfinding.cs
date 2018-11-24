@@ -26,8 +26,9 @@ public class BallPathfinding : MonoBehaviour {
 	private Vector2 flatPos;
 
 
-    public static bool currentlyHit;
-
+    public bool currentlyHit;
+    public Vector3 velocity;
+    public float magnitude;
     //How much force is applied to the ball
     //each frame to "steer" it.
     [SerializeField]
@@ -35,18 +36,17 @@ public class BallPathfinding : MonoBehaviour {
 	private float force = 1;
     private float weight = 1;
 
-
     void Start() {
 		master = FindObjectOfType<PathfindingMaster>();
 		rb = GetComponent<Rigidbody>();
         rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
-        currentlyHit = false;
+        //Time.timeScale = 0.1f;
 	}
 
 	void FixedUpdate() {
 
-        Vector3 velocity = rb.velocity;
-
+        velocity = rb.velocity;
+        magnitude = rb.velocity.magnitude;
 
 		//Check for changes in pathfinding node.
 		flatPos = new Vector2(transform.position.x, transform.position.z);
@@ -60,16 +60,24 @@ public class BallPathfinding : MonoBehaviour {
 			};
 		}
 
-        //Move towards the next node.
-        if (velocity.magnitude > 0.1f)
+        //If the ball has been hit with force.
+        if (velocity.magnitude > 3f)
+        {
+            currentlyHit = true;
+        }
+        //When the ball comes to a stop after being hit
+        if (velocity.magnitude < 0.1f)
         {
             currentlyHit = false;
         }
 
+        //If the ball hasn't been hit, perform normal pathfinding actions.
         if (currentlyHit == false)
         {
+            //Move towards the next node.
             rb.AddForce(new Vector3(master.path[pathfindingIndex].x - flatPos.x, 0, master.path[pathfindingIndex].y - flatPos.y).normalized * force);
         }
+
 
 		Debug.Log(master.path[pathfindingIndex] + " ... " + flatPos);
 

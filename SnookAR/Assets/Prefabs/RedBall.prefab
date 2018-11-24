@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135243492969935206}
   - component: {fileID: 54332591895516606}
   m_Layer: 0
-  m_Name: RedCueBall
+  m_Name: RedBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
