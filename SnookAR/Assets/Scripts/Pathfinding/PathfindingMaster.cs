@@ -25,7 +25,7 @@ public class PathfindingMaster : MonoBehaviour {
 	private const int TABLE_WIDTH = 40;
 	private const int TABLE_DEPTH = 80;
 
-	private const int WIDTH_OFFSET = 10;
+	private const int WIDTH_OFFSET = 20;
 	private const int DEPTH_OFFSET = 20;
 
 	//false by default. True if there's an obstacle
@@ -139,8 +139,8 @@ public class PathfindingMaster : MonoBehaviour {
 					//Ignore non-edge nodes.
 					if(Mathf.Abs(x) < 2 && Mathf.Abs(y) < 2) continue;
 					//Ignore nodes out of index.
-					if(currentNode.x + x < 0 || currentNode.x + x > TABLE_WIDTH || 
-						currentNode.y + y < 0 || currentNode.y + y > TABLE_DEPTH) continue;
+					if(currentNode.x + x < 0 || currentNode.x + x >= TABLE_WIDTH || 
+						currentNode.y + y < 0 || currentNode.y + y >= TABLE_DEPTH) continue;
 					//Check if the node was already visited.
 					if(visitedNodes[currentNode.x + x, currentNode.y + y] == true) continue;
 
@@ -150,8 +150,8 @@ public class PathfindingMaster : MonoBehaviour {
 					for(int x2 = -1; x2 <= 1; x2++) {
 						for(int y2 = -1; y2 <= 1; y2++) {
 							//Ignore nodes out of index.
-							if(currentNode.x + x + x2 < 0 || currentNode.x + x + x2 > TABLE_WIDTH || 
-								currentNode.y + y + y2 < 0 || currentNode.y + y + y2 > TABLE_DEPTH) continue;
+							if(currentNode.x + x + x2 < 0 || currentNode.x + x + x2 >= TABLE_WIDTH || 
+								currentNode.y + y + y2 < 0 || currentNode.y + y + y2 >= TABLE_DEPTH) continue;
 
 							if(pathfindingBlocked[currentNode.x + x + x2, currentNode.y + y + y2]) {
 								//Path blocked. Consider this node visited.
@@ -160,7 +160,7 @@ public class PathfindingMaster : MonoBehaviour {
 							}
 						}
 					}
-					if(impassable) return new List<Vector2Int>();
+					if(impassable) break;
 
 					//If the node can be passed through,
 					//and hasn't already been put in the open nodes,
@@ -196,7 +196,7 @@ public class PathfindingMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainPath = AStar(Vector3.zero, Vector3.right * 5);
+		mainPath = AStar(startPoint.position, endPoint.position);
 		for(int i = 0; i < mainPath.Count; i++) {
 			Debug.Log(mainPath[i]);
 		}

@@ -44,14 +44,14 @@ public class BallPathfinding : MonoBehaviour {
     void Start() {
 		master = FindObjectOfType<PathfindingMaster>();
 		rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
+        //rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
         currentlyHit = false;
 	}
 
 	void FixedUpdate() {
 		//Check for changes in pathfinding node.
 		if(useDefaultPath) {
-			if((master.mainPath[pathfindingIndex] - transform.position).sqrMagnitude < 3) {
+			if((master.mainPath[pathfindingIndex] - transform.position).sqrMagnitude < 1) {
 				useDefaultPath = true;
 				//Move to the next pathfinding index.
 				if(pathfindingIndex < master.mainPath.Count - 1) pathfindingIndex++;
