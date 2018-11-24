@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BallClass.cs" />
      <Compile Include="Assets\Scripts\BallPathfinding.cs" />
      <Compile Include="Assets\Scripts\PathfindingMaster.cs" />
      <None Include="Assets\poo.txt" />

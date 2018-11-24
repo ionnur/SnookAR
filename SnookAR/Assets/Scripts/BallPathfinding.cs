@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BallPathfinding : MonoBehaviour {
 
 	/* BallPathfinding CLASS
@@ -24,20 +25,29 @@ public class BallPathfinding : MonoBehaviour {
 	private Rigidbody rb;
 	private Vector2 flatPos;
 
-	//How much force is applied to the ball
-	//each frame to "steer" it.
-	[SerializeField]
+
+    public static bool currentlyHit;
+
+    //How much force is applied to the ball
+    //each frame to "steer" it.
+    [SerializeField]
 
 	private float force = 1;
     private float weight = 1;
-    private bool currentlyHit = false;
 
-	void Start() {
+
+    void Start() {
 		master = FindObjectOfType<PathfindingMaster>();
 		rb = GetComponent<Rigidbody>();
+        rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
+        currentlyHit = false;
 	}
 
 	void FixedUpdate() {
+
+        Vector3 velocity = rb.velocity;
+
+
 		//Check for changes in pathfinding node.
 		flatPos = new Vector2(transform.position.x, transform.position.z);
 
@@ -50,9 +60,18 @@ public class BallPathfinding : MonoBehaviour {
 			};
 		}
 
-		//Move towards the next node.
-		rb.AddForce(new Vector3(master.path[pathfindingIndex].x - flatPos.x, 0, master.path[pathfindingIndex].y - flatPos.y).normalized * force);
+        //Move towards the next node.
+        if (velocity.magnitude > 0.1f)
+        {
+            currentlyHit = false;
+        }
+
+        if (currentlyHit == false)
+        {
+            rb.AddForce(new Vector3(master.path[pathfindingIndex].x - flatPos.x, 0, master.path[pathfindingIndex].y - flatPos.y).normalized * force);
+        }
 
 		Debug.Log(master.path[pathfindingIndex] + " ... " + flatPos);
+
 	}
 }
