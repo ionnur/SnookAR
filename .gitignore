@@ -4,3 +4,5 @@ SnookAR/Temp/**
 SnookAR/Temp/UnityLockfile
 SnookAR/Temp/UnityLockfile
 SnookAR/Library/*
+SnookAR/Library/**
+SnookAR\Library\**

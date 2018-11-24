@@ -6,6 +6,7 @@ public class GUIText : MonoBehaviour
 {
 
     public Text RoundNumUI, ScoreUI;
+    public GameObject targetFoundUI;
 
     // Use this for initialization
     void Start()
@@ -20,6 +21,6 @@ public class GUIText : MonoBehaviour
         //RoundNumUI.text = "Round: " + Spawner.waveNumber;
         ScoreUI.text = "Score: SCOORE";
 
-
+        if ()
     }
 }
