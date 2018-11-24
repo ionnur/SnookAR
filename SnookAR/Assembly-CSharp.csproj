@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BallPathfinding.cs" />
+     <Compile Include="Assets\Scripts\GUIText.cs" />
      <Compile Include="Assets\Scripts\PathfindingMaster.cs" />
+     <Compile Include="Assets\Scripts\SceneStuff.cs" />
      <None Include="Assets\poo.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/MINI SASHA/Documents/GitHub/SnookAR/SnookAR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
