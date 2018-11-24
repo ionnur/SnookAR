@@ -44,7 +44,7 @@ public class BallPathfinding : MonoBehaviour {
     void Start() {
 		master = FindObjectOfType<PathfindingMaster>();
 		rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
+        //rb.AddForce(Vector3.right * 30, ForceMode.Impulse);
         currentlyHit = false;
 	}
 
