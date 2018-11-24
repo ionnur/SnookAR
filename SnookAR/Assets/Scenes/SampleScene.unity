@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.0040922156, g: 0.00022393074, b: 0.0000000573731,
+=======
+  m_IndirectSpecularColor: {r: 0.004092219, g: 0.00022393119, b: 0.0000000573731,
+>>>>>>> 834f817fe9ae825a83cd0cdeea9860e8e1a52521
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -311,12 +315,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 68002322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03048cb0cfdc45a08c6f8103f87be95, type: 3}
+  m_Script: {fileID: 11500000, guid: b5bf4c3298c0440dea80d8d0fd16eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyHit: 0
-  velocity: {x: 0, y: 0, z: 0}
-  magnitude: 0
   force: 1
 --- !u!1 &170076733
 GameObject:
@@ -458,12 +459,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 256570378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03048cb0cfdc45a08c6f8103f87be95, type: 3}
+  m_Script: {fileID: 11500000, guid: b5bf4c3298c0440dea80d8d0fd16eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyHit: 0
-  velocity: {x: 0, y: 0, z: 0}
-  magnitude: 0
   force: 1
 --- !u!1 &300482383
 GameObject:
@@ -853,12 +851,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 630992874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03048cb0cfdc45a08c6f8103f87be95, type: 3}
+  m_Script: {fileID: 11500000, guid: b5bf4c3298c0440dea80d8d0fd16eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyHit: 0
-  velocity: {x: 0, y: 0, z: 0}
-  magnitude: 0
   force: 1
 --- !u!1 &650140835
 GameObject:
@@ -1257,9 +1252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61028000dd76c4bfe86f185fa3581174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathTransforms:
-  - {fileID: 610389597}
-  - {fileID: 300482384}
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  mainPath: []
 --- !u!4 &967855554
 Transform:
   m_ObjectHideFlags: 0
@@ -1446,12 +1441,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121183101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03048cb0cfdc45a08c6f8103f87be95, type: 3}
+  m_Script: {fileID: 11500000, guid: b5bf4c3298c0440dea80d8d0fd16eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyHit: 0
-  velocity: {x: 0, y: 0, z: 0}
-  magnitude: 0
   force: 1
 --- !u!1 &1240671090
 GameObject:
