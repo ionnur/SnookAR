@@ -194,14 +194,15 @@ public class PathfindingMaster : MonoBehaviour {
 		return returnList;
 	}
 
+	public bool TryAStar() {
+		mainPath = AStar(startPoint.position, endPoint.position);
+		if(mainPath[mainPath.Count - 1] == new Vector3((int)endPoint.position.x, 0, (int)endPoint.position.z)) return true;
+		else return false;
+	}
+
 	// Use this for initialization
 	void Start () {
-		mainPath = AStar(startPoint.position, endPoint.position);
-		for(int i = 0; i < mainPath.Count; i++) {
-			Debug.Log(mainPath[i]);
-		}
-		Debug.Log(GlobalToLocal(Vector3.zero));
-		Debug.Log(LocalToGlobal(new Vector2Int(10, 20)));
+		Debug.Log(TryAStar());
 	}
 	
 	// Update is called once per frame

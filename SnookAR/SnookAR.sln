@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnookAR", "Assembly-CSharp.csproj", "{AE7E75FA-AA96-255E-C746-495D8885C9E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnookAR", "VuforiaScripts.csproj", "{BBA7F1F6-28AB-AEE3-7457-BA8C040429AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnookAR", "VuforiaEditorScripts.csproj", "{E1C7F7C3-5742-0F25-FB33-86632F7666C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{AE7E75FA-AA96-255E-C746-495D8885C9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE7E75FA-AA96-255E-C746-495D8885C9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE7E75FA-AA96-255E-C746-495D8885C9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA7F1F6-28AB-AEE3-7457-BA8C040429AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA7F1F6-28AB-AEE3-7457-BA8C040429AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA7F1F6-28AB-AEE3-7457-BA8C040429AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA7F1F6-28AB-AEE3-7457-BA8C040429AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C7F7C3-5742-0F25-FB33-86632F7666C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C7F7C3-5742-0F25-FB33-86632F7666C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C7F7C3-5742-0F25-FB33-86632F7666C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C7F7C3-5742-0F25-FB33-86632F7666C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

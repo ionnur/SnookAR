@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Pathfinding/PathfindingMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs">
     <Files>
-      <File FileName="Assets/Scripts/Pathfinding/PathfindingMaster.cs" Line="185" Column="50" />
-      <File FileName="Assets/Scripts/Pathfinding/BallPathfinding.cs" Line="77" Column="4" />
+      <File FileName="Assets/Scripts/Pathfinding/PathfindingMaster.cs" Line="197" Column="26" />
+      <File FileName="Assets/Scripts/Pathfinding/PathfindingObstacle.cs" Line="13" Column="5" />
+      <File FileName="Assets/Scripts/Pathfinding/BallPathfinding.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" Line="10" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
