@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GUIText : MonoBehaviour
 {
-
-    public Text RoundNumUI, ScoreUI;
+    public static int Score, Health;
+    public Text RoundNumUI, ScoreUI, HealthUI;
     public GameObject targetFoundUI;
 
     // Use this for initialization
     void Start()
     {
         targetFoundUI.SetActive(false);
+        Health = 100;
+        Score = 0;
     }
 
     // Update is called once per frame
@@ -19,7 +21,9 @@ public class GUIText : MonoBehaviour
     {
 
         //RoundNumUI.text = "Round: " + Spawner.waveNumber;
-        ScoreUI.text = "Score: SCOORE";
+        ScoreUI.text = "Score: " + Score;
+        HealthUI.text = "Health: " + Health;
+        //RoundNumUI.text = "Round: " + Spawner.waveNumber;
 
         if (DefaultTrackableEventHandler.isTracking == true)
         {

@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\Pathfinding\BallPathfinding.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\PathfindingMaster.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\PathfindingObstacle.cs" />
-     <Compile Include="Assets\Scripts\SceneStuff.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
