@@ -51,7 +51,9 @@ public class BallPathfinding : MonoBehaviour {
 	void FixedUpdate() {
 		//Check for changes in pathfinding node.
 		if(useDefaultPath) {
-			if((master.mainPath[pathfindingIndex] - transform.position).sqrMagnitude < 3) {
+            Vector3 dist = master.mainPath[pathfindingIndex] - transform.position;
+            dist = new Vector3(dist.x, 0, dist.z);
+			if(dist.sqrMagnitude < 3) {
 				useDefaultPath = true;
 				//Move to the next pathfinding index.
 				if(pathfindingIndex < master.mainPath.Count - 1) pathfindingIndex++;
@@ -79,9 +81,10 @@ public class BallPathfinding : MonoBehaviour {
         if (currentlyHit == false)
         {
 			if(useDefaultPath) {
-				//We can use the default path -
-				//keep moving along it.
-				rb.AddForce((master.mainPath[pathfindingIndex] - transform.position).normalized * force);
+                //We can use the default path -
+                //keep moving along it.
+                //rb.AddForce((master.mainPath[pathfindingIndex] - transform.position).normalized * force);
+                rb.MovePosition(transform.position + (master.mainPath[pathfindingIndex] - transform.position).normalized * force / 50);
 			} else {
 				//We can't use the default path.
 				//Get a new path leading towards

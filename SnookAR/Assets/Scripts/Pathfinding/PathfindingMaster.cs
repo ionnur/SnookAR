@@ -22,11 +22,11 @@ public class PathfindingMaster : MonoBehaviour {
 
 	private const float NODE_SCALE = 0.5f;
 
-	private const int TABLE_WIDTH = 40;
-	private const int TABLE_DEPTH = 80;
+	private const int TABLE_WIDTH = 28;
+	private const int TABLE_DEPTH = 60;
 
-	private const int WIDTH_OFFSET = 10;
-	private const int DEPTH_OFFSET = 20;
+	private const int WIDTH_OFFSET = TABLE_WIDTH / 2;
+	private const int DEPTH_OFFSET = TABLE_DEPTH / 2;
 
 	//false by default. True if there's an obstacle
 	//blocking the balls.
@@ -96,6 +96,7 @@ public class PathfindingMaster : MonoBehaviour {
 
 		//Begin at the start.
 		openNodes.Add(start);
+        Debug.Log(start);
 		startDists[start.x, start.y] = 0;
 		endDists[start.x, start.y] = (start - end).sqrMagnitude;
 
@@ -139,8 +140,8 @@ public class PathfindingMaster : MonoBehaviour {
 					//Ignore non-edge nodes.
 					if(Mathf.Abs(x) < 2 && Mathf.Abs(y) < 2) continue;
 					//Ignore nodes out of index.
-					if(currentNode.x + x < 0 || currentNode.x + x > TABLE_WIDTH || 
-						currentNode.y + y < 0 || currentNode.y + y > TABLE_DEPTH) continue;
+					if(currentNode.x + x < 0 || currentNode.x + x >= TABLE_WIDTH || 
+						currentNode.y + y < 0 || currentNode.y + y >= TABLE_DEPTH) continue;
 					//Check if the node was already visited.
 					if(visitedNodes[currentNode.x + x, currentNode.y + y] == true) continue;
 
@@ -150,8 +151,8 @@ public class PathfindingMaster : MonoBehaviour {
 					for(int x2 = -1; x2 <= 1; x2++) {
 						for(int y2 = -1; y2 <= 1; y2++) {
 							//Ignore nodes out of index.
-							if(currentNode.x + x + x2 < 0 || currentNode.x + x + x2 > TABLE_WIDTH || 
-								currentNode.y + y + y2 < 0 || currentNode.y + y + y2 > TABLE_DEPTH) continue;
+							if(currentNode.x + x + x2 < 0 || currentNode.x + x + x2 >= TABLE_WIDTH || 
+								currentNode.y + y + y2 < 0 || currentNode.y + y + y2 >= TABLE_DEPTH) continue;
 
 							if(pathfindingBlocked[currentNode.x + x + x2, currentNode.y + y + y2]) {
 								//Path blocked. Consider this node visited.
@@ -194,14 +195,21 @@ public class PathfindingMaster : MonoBehaviour {
 		return returnList;
 	}
 
+    public bool TryAStar()
+    {
+        List<Vector3> tmp = AStar(startPoint.position, endPoint.position);
+        //Debug.Log(tmp[tmp.Count - 1]);
+        mainPath = tmp;
+        if ((tmp[tmp.Count - 1] - endPoint.position).sqrMagnitude < 3)
+        {
+            return true;
+        }
+        else return false;
+    }
+
 	// Use this for initialization
 	void Start () {
-		mainPath = AStar(Vector3.zero, Vector3.right * 5);
-		for(int i = 0; i < mainPath.Count; i++) {
-			Debug.Log(mainPath[i]);
-		}
-		Debug.Log(GlobalToLocal(Vector3.zero));
-		Debug.Log(LocalToGlobal(new Vector2Int(10, 20)));
+        TryAStar();
 	}
 	
 	// Update is called once per frame

@@ -86,6 +86,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected virtual void OnTrackingFound()
     {
         isTracking = true;
+        Time.timeScale = 1;
 
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
@@ -109,6 +110,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected virtual void OnTrackingLost()
     {
         isTracking = false;
+        Time.timeScale = 0.1f;
 
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
