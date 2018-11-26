@@ -16,14 +16,6 @@ public class Spawner : MonoBehaviour {
 
     public static int waveNumber = 0;
 
-    IEnumerator ballTimer()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(2);
-        }
-    }
-
     void spawnBall(Rigidbody ballColour)
     {
         Instantiate(ballColour,
@@ -93,8 +85,12 @@ public class Spawner : MonoBehaviour {
         }
     }
 
-    void Start () {
+    void Start ()
+    {
         StartCoroutine(waveTimer());
-    //    spawnWave();
+        //ballNumber = 0;
+        waveNumber = 0;
+        playWave = true;
+        //    spawnWave();
     }
 }

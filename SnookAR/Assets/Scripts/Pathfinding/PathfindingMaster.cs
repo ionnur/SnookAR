@@ -22,7 +22,7 @@ public class PathfindingMaster : MonoBehaviour {
 
 	private const float NODE_SCALE = 0.5f;
 
-	private const int TABLE_WIDTH = 28;
+	private const int TABLE_WIDTH = 20;
 	private const int TABLE_DEPTH = 60;
 
 	private const int WIDTH_OFFSET = TABLE_WIDTH / 2;
@@ -161,7 +161,7 @@ public class PathfindingMaster : MonoBehaviour {
 							}
 						}
 					}
-					if(impassable) return new List<Vector2Int>();
+                    if (impassable) break;
 
 					//If the node can be passed through,
 					//and hasn't already been put in the open nodes,

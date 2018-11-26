@@ -12,6 +12,12 @@ public class ClickForce : MonoBehaviour {
 
     public int healthValue;
 
+    void Start()
+    {
+        //score = 0;
+        //health = 100;
+    }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Goal")
@@ -40,16 +46,20 @@ public class ClickForce : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
-            cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+            cam = Camera.allCameras[0];
+            
+            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("click");
 
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.red, 5.0f);
+
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
             {
-                // the object identified by hit.transform was clicked
-                // do whatever you want
+                Debug.Log("hit");
+
                 if (hit.collider.gameObject == this.gameObject)
                 {
                     this.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 1000.0f);

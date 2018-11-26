@@ -20,5 +20,6 @@ public class PathfindingObstacle : MonoBehaviour {
 	void Start () {
 		PathfindingMaster master = FindObjectOfType<PathfindingMaster>();
 		master.Carve(transform.position, size);
+        Debug.Log("CARVED");
 	}
 }
